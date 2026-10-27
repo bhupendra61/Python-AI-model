@@ -1,0 +1,26 @@
+timestamp_column: timestamp
+entity_column: cell_id
+target_columns: []
+neighbor_column: neighbors
+site_column: site_id
+
+time_features:
+  hour: true
+  day_of_week: true
+  day_of_year: true
+  is_weekend: true
+  is_holiday: true
+  holiday_dates_file: null
+
+# Values and windows are expressed in observations at the configured grain.
+lags:
+  hourly: [1, 24, 168]
+  daily: [1, 7, 28]
+rolling_windows:
+  hourly: [24, 168]
+  daily: [7, 28]
+rolling_statistics: [mean, std]
+
+feature_columns: []
+ratios: {}
+neighbors: {}

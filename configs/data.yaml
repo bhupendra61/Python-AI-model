@@ -1,0 +1,37 @@
+paths:
+  raw: data/raw
+  interim: data/interim
+  processed: data/processed
+  external: data/external
+
+# LTE is the first-release scope; add WCDMA/GSM after its pipeline is proven.
+grain: hourly
+technology: lte
+
+# Use null to leave a boundary unspecified; dates are inclusive ISO dates.
+date_range:
+  start: null
+  end: null
+
+technologies:
+  - gsm
+  - wcdma
+  - lte
+
+columns:
+  timestamp: timestamp
+  cell_id: cell_id
+  # Map vendor KPI names to canonical names before using downstream stages.
+  column_mapping: {}
+  kpis: {}
+  counters: []
+  outage_flag: null
+  planned_event_flag: null
+  # Cells reserved entirely from training for unseen-cell evaluation.
+  held_out_cells: []
+
+quality:
+  interval: 1h
+  # Explicitly declare columns for which zero indicates an outage, not valid load.
+  zero_is_outage_columns: []
+  outlier_bounds: {}

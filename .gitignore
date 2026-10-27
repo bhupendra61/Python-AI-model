@@ -1,0 +1,30 @@
+# Local environment and credentials
+.env
+.venv/
+venv/
+
+# Data and generated artifacts
+/data/
+/models/
+/mlruns/
+/reports/figures/
+/reports/*.csv
+/reports/*.parquet
+/reports/*.json
+/ran_sample_data.xlsx
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+
+# Editors and operating systems
+.vscode/*
+!.vscode/settings.json
+!.vscode/launch.json
+.DS_Store
+Thumbs.db
